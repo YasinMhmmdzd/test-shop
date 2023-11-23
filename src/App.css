@@ -1,0 +1,27 @@
+/* Add Fonts */
+@font-face {
+    font-family: mtn-light;
+    src: url("../public/fonts/mtn-light.ttf");
+}
+@font-face {
+    font-family: Kalameh;
+    src: url("../public/fonts/kalameh.TTF");
+}
+/* Global styles */
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    font-family: mtn-light;
+}
+:root{
+    --red-color : #EF3F3E;
+    --gray-color : #818285;
+}

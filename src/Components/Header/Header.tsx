@@ -2,7 +2,9 @@ import React from 'react'
 import "./Header.css"
 function Header() {
   return (
-    <div>Header</div>
+    <header>
+      <h2 className="header-logo">عصر نقره ای</h2>
+    </header>
   )
 }
 
