@@ -1,12 +1,30 @@
+.home-page{
+    padding:20px 0 60px 0;
+}
 .home-page h2{
     padding: 10px;
     font-family: kalameh;
     font-size: 30px;
 }
+.loading{
+    color: var(--gray-color);
+    font-size: 22px;
+    text-align: center;
+    font-family: kalameh;
+    animation: load-anim 0.7s infinite;
+}
 .products-container{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+@keyframes load-anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 @media only screen and (min-width:868px){
     .products-container{

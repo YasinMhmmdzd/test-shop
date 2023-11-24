@@ -25,3 +25,6 @@ body{
     --red-color : #EF3F3E;
     --gray-color : #818285;
 }
+.active-route{
+    color: #000;
+}
