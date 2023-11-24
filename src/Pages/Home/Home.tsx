@@ -6,6 +6,7 @@ import "./Home.css"
 function Home() {
   const [products , setProducts] = useState([])
   const [isFetchPending , setIsFetchPending] = useState(false)
+  
   useEffect(()=>{
     setIsFetchPending(true)
     axios.post("https://imis.silverage.co/api/shop/products/search" , {
