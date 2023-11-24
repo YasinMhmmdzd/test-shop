@@ -1,0 +1,15 @@
+.home-page h2{
+    padding: 10px;
+    font-family: kalameh;
+    font-size: 30px;
+}
+.products-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+@media only screen and (min-width:868px){
+    .products-container{
+        flex-direction: row;
+    }
+}
