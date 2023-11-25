@@ -7,6 +7,11 @@
 .single-product{
     padding: 20px 5px 100px 5px;
 }
+.single-product-top{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 .single-product-image{
     width: 100%;
     text-align: center;
@@ -51,10 +56,25 @@
     font-family: kalameh;
     padding: 15px 5px;
 }
+.single-product-description{
+    padding: 30px 5px;
+}
 .single-product-description p{
     width: 90%;
     text-align: justify;
     line-height: 40px;
     margin: 10px auto;
     overflow-x: hidden !important;
+}
+
+@media only screen and (min-width:868px){
+    .single-product-top{
+        flex-direction: row;
+    }
+    .single-product-image {
+        width: 30%;
+    }
+    .single-product-infos{
+        width: 50%;
+    }
 }
