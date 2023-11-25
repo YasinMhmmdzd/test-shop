@@ -27,6 +27,10 @@
     font-size: 20px;
     padding: 15px 5px;
 }
+.single-product-market-name{
+    font-family: kalameh;
+    color: var(--gray-color);
+}
 .single-product-count{
     font-size: 15px;
     padding: 15px 5px;

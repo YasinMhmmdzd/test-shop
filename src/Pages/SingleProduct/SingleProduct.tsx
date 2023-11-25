@@ -18,6 +18,7 @@ function SingleProduct() {
       setIsLoading(false)
     })
   } , [])
+  
 
 
   return (
@@ -45,6 +46,9 @@ function SingleProduct() {
 
       <p className='single-product-price'>
       {productDetails.full_price.sale_price_with_tax_and_discount} تومان
+      </p>
+      <p className='single-product-market-name'>
+        فروشنده :‌ {productDetails.market.title}
       </p>
 
       <form>
