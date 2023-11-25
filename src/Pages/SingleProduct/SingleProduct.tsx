@@ -27,11 +27,13 @@ function SingleProduct() {
       </Link>
       {isLoading ? <p className='loading'>درحال بارگزاری...</p> : (
         <>
+        <div className="single-product-top">
+
       <div className="single-product-image">
         <img src={productDetails.cover} alt="cover product" />
       </div>
 
-      <div className="single-proudct-infos">
+      <div className="single-product-infos">
 
       <h2 className='single-product-name'>
         {productDetails.name}
@@ -49,9 +51,9 @@ function SingleProduct() {
 
       <div className="single-product-cart">
         <button type='button' className='cart-count-btn' onClick={() => setCartCount(prev => {
-          //check previous state up to 0
-           if (prev <= 0) {
-            return 0;
+          //check previous state up to 1
+           if (prev <= 1) {
+            return 1;
           }
           return prev -1
           })}>-</button>
@@ -66,6 +68,8 @@ function SingleProduct() {
       </form>
 
       </div>
+
+        </div>
       <div className="single-product-description">
         <p>
           {productDetails.description}
