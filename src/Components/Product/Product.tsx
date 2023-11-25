@@ -2,6 +2,7 @@ import React from 'react'
 import {HiShoppingCart} from "react-icons/hi"
 import "./Product.css"
 import { Link } from 'react-router-dom'
+
 function Product(props:{name:string , count_in_box:number  , count_unit:object , full_price:{sale_price_with_tax_and_discount : number} , cover:string , slug:string}) {
   return (
     <Link to={`/product/${props.slug}`} className='product-link'>
