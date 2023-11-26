@@ -5,9 +5,13 @@ import CartProduct from '../../Components/CartProduct/CartProduct';
 import "./Cart.css"
 
 function Cart() {
+  //get cart product items
   let cartProducts = localStorage.getItem("cartProduct")
+  //states
   const [isLoading , setIsLoading] = useState(true)
   const [allProducts , setAllProducts] = useState([])
+
+  //call api
   useEffect(()=>{
 
     axios.post("https://imis.silverage.co/api/shop/cart/details" , {
@@ -19,7 +23,9 @@ function Cart() {
     })
   } , [])
   return (
+
     <div className="cart">
+      {/* check if loading finished */}
       {isLoading ? <p className='loading'>درحال بارگزاری ... </p> :
       <div className="cart-container">
        {

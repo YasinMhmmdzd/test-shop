@@ -58,6 +58,8 @@ function SingleProduct() {
       <Link to="/" className="back-icon">
       <HiArrowLeft />
       </Link>
+      {/* check if loading finished */}
+      
       {isLoading ? <p className='loading'>درحال بارگزاری...</p> : (
         <>
         <div className="single-product-top">
