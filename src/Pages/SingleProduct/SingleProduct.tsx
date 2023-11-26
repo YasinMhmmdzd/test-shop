@@ -8,7 +8,8 @@ function SingleProduct() {
   const currentRoute = useParams().id
   const [productDetails , setProductDetails] : any = useState({})
   const [isLoading , setIsLoading] = useState(true)
-  const [cartCount, setCartCount] = useState(1);
+  const [cartCount, setCartCount] = useState(1)
+  const [showModal , setShowModal] = useState(false)
 
   useEffect(()=>{
     axios.post("https://imis.silverage.co/api/shop/products/details" , {
@@ -22,14 +23,16 @@ function SingleProduct() {
 
   const addCartHandler = (e: Event) => {
     e.preventDefault();
-  
+
+    //current product
     const newCartProduct = {
       id: productDetails.id,
       count: cartCount,
     };
-  
+    //get products from localstorage
     let cartProducts : [] | string | null = localStorage.getItem("cartProduct");
-  
+
+    //add new product to cart
     if (cartProducts) {
       cartProducts = JSON.parse(cartProducts);
     } else {
@@ -37,14 +40,21 @@ function SingleProduct() {
     }
   
     cartProducts.push(newCartProduct);
-  
+
+    //succes modal logics
+    setShowModal(true)
     localStorage.setItem("cartProduct", JSON.stringify(cartProducts));
+    const interval = setInterval(() => {
+      setShowModal(false);
+    }, 3000);
+    return () => clearInterval(interval);
   };
   
 
 
   return (
     <div className='single-product'>
+     
       <Link to="/" className="back-icon">
       <HiArrowLeft />
       </Link>
@@ -91,6 +101,11 @@ function SingleProduct() {
 
       </div>
         <button className='add-to-cart-btn' type='submit'> <HiShoppingCart size={22}/> افزودن به سبد خرید</button>
+        {showModal && (
+        <div className="modal">
+          <p>محصول با موفقیت به سبد خرید اضافه شد</p>
+        </div>
+      )}
       </form>
 
       </div>

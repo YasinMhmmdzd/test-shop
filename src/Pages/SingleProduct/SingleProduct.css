@@ -70,6 +70,26 @@
     margin: 10px auto;
     overflow-x: hidden !important;
 }
+.modal{
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 75%;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: center;
+    animation: load-modal 1s ease-in-out infinite;
+}
+
+@keyframes load-modal{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
 
 @media only screen and (min-width:868px){
     .single-product-top{
