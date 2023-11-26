@@ -1,0 +1,29 @@
+.about{
+    text-align: center;
+    padding: 10px 0 75px 0;
+}
+.about img{
+    width: 80%;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+.about h2{
+    text-align: right;
+    padding: 10px;
+    font-family: kalameh;
+    font-size: 30px;
+}
+.about p{
+    text-align: justify;
+    width: 90%;
+    margin: 10px auto;
+    line-height: 35px;
+}
+
+@media only screen and (min-width:868px){
+    .about img{
+        width: 50%;
+        height: 300px;
+    }
+}
