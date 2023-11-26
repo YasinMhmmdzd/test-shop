@@ -8,7 +8,7 @@ function SingleProduct() {
   const currentRoute = useParams().id
   const [productDetails , setProductDetails] : any = useState({})
   const [isLoading , setIsLoading] = useState(true)
-  const [cartCount , setCartCount] = useState(1)
+  const [cartCount, setCartCount] = useState(1);
 
   useEffect(()=>{
     axios.post("https://imis.silverage.co/api/shop/products/details" , {
@@ -18,6 +18,28 @@ function SingleProduct() {
       setIsLoading(false)
     })
   } , [])
+
+
+  const addCartHandler = (e: Event) => {
+    e.preventDefault();
+  
+    const newCartProduct = {
+      id: productDetails.id,
+      count: cartCount,
+    };
+  
+    let cartProducts : [] | string | null = localStorage.getItem("cartProduct");
+  
+    if (cartProducts) {
+      cartProducts = JSON.parse(cartProducts);
+    } else {
+      cartProducts = [];
+    }
+  
+    cartProducts.push(newCartProduct);
+  
+    localStorage.setItem("cartProduct", JSON.stringify(cartProducts));
+  };
   
 
 
@@ -51,7 +73,7 @@ function SingleProduct() {
         فروشنده :‌ {productDetails.market.title}
       </p>
 
-      <form>
+      <form onSubmit={addCartHandler}>
 
       <div className="single-product-cart">
         <button type='button' className='cart-count-btn' onClick={() => setCartCount(prev => {
