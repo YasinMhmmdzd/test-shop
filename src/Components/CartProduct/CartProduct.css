@@ -1,0 +1,14 @@
+.cart-product{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 15px auto;
+    width: 85%;
+    font-family: kalameh;
+    padding: 10px;
+}
+.cart-product-name , .cart-product-price , .cart-product-count{
+    padding: 5px;
+}
+.cart-product-name{
+    color: var(--gray-color);
+
+}
